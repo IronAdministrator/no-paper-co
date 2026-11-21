@@ -1,7 +1,17 @@
 # NO_PAPER landing page
 
-Landing page for the NO_PAPER design & development studio, built from the Figma file
-[Commercial_Website](https://www.figma.com/design/b2od3B5r7SfhHiFxgj0OsB/Commercial_Website?node-id=0-1).
+Landing page for the NO_PAPER design & development studio.
+
+## Design
+
+The design lives in Claude Design:
+
+- [NO_PAPER design system](https://claude.ai/artifact/KCWAWkADpemUpzAEaNW7pk): design rules, tokens, components and assets.
+- [NO_PAPER landing page canvas](https://claude.ai/artifact/Maon1LoaGoVWjW3w6k6fbW): the full landing page and a tokens and components board, with the design system installed.
+
+Keep the design system and `src/design-system/tokens.ts` in step when either changes. `CLAUDE.md` has the working rules.
+The original Figma file ([Commercial_Website](https://www.figma.com/design/b2od3B5r7SfhHiFxgj0OsB/Commercial_Website?node-id=0-1))
+is kept for reference only.
 
 ## Stack
 
@@ -44,5 +54,5 @@ uno.config.ts            # UnoCSS theme (from tokens.ts) and shortcuts such as t
 - The contact form has no backend yet. Submitting opens the visitor's mail app with the message pre-filled
   to `hello@nopaper.studio`.
 - The about-section laptop illustration was cropped from a Figma render because the Figma API limit was reached
-  before it could be exported on its own. Re-export `Object/Other 03` as a transparent PNG and replace
-  `src/assets/object-other-03.png` for a sharper image.
+  before it could be exported on its own, so it sits on the page colour rather than a transparent background.
+  Replace `src/assets/object-other-03.png` (and the image on the canvas) with a transparent version for a sharper result.
