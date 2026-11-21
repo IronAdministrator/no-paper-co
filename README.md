@@ -4,9 +4,12 @@ Landing page for the NO_PAPER design & development studio.
 
 ## Design
 
-The design lives in Claude Design: [NO_PAPER landing page canvas](https://claude.ai/artifact/Maon1LoaGoVWjW3w6k6fbW).
-It has two artboards: the full landing page and a design-system board with the tokens and components.
-Keep the canvas and `src/design-system/tokens.ts` in step when either changes.
+The design lives in Claude Design:
+
+- [NO_PAPER design system](https://claude.ai/artifact/KCWAWkADpemUpzAEaNW7pk): design rules, tokens, components and assets.
+- [NO_PAPER landing page canvas](https://claude.ai/artifact/Maon1LoaGoVWjW3w6k6fbW): the full landing page and a tokens and components board, with the design system installed.
+
+Keep the design system and `src/design-system/tokens.ts` in step when either changes. `CLAUDE.md` has the working rules.
 The original Figma file ([Commercial_Website](https://www.figma.com/design/b2od3B5r7SfhHiFxgj0OsB/Commercial_Website?node-id=0-1))
 is kept for reference only.
 
