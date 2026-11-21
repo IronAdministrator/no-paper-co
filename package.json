@@ -1,0 +1,40 @@
+{
+  "name": "no-paper-co",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "vue-tsc -b && vp build",
+    "preview": "vp preview",
+    "typecheck": "vue-tsc -b",
+    "check": "vp check && vue-tsc -b",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@fontsource/nunito-sans": "^5.3.0",
+    "@fontsource/outfit": "^5.3.0",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "10.6.8",
+    "@storybook/vue3-vite": "10.6.8",
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/tsconfig": "^0.9.1",
+    "storybook": "10.6.8",
+    "typescript": "~6.0.3",
+    "unocss": "66.13.0",
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
+    "vue-tsc": "^3.3.14"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    }
+  }
+}

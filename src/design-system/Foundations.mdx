@@ -1,0 +1,168 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/blocks";
+import { tokens } from "./tokens";
+
+<Meta title="Design system/Foundations" />
+
+# NO_PAPER foundations
+
+These tokens come from the Figma file and live in `src/design-system/tokens.ts` and are wired into UnoCSS in `uno.config.ts`. Every component uses them through UnoCSS
+utilities (for example `bg-surface`, `text-primary`, `rounded-card`, `font-heading`), so changing a value there
+updates the site and this documentation together.
+
+## Colors
+
+<ColorPalette>
+  <ColorItem title="ink" subtitle="Page background" colors={{ ink: tokens.colors.ink }} />
+  <ColorItem title="surface" subtitle="Bars, panels and cards" colors={tokens.colors.surface} />
+  <ColorItem title="primary" subtitle="Buttons, eyebrows, borders" colors={tokens.colors.primary} />
+  <ColorItem title="accent" subtitle="Links and contact chips" colors={tokens.colors.accent} />
+  <ColorItem title="star" subtitle="Ratings" colors={{ star: tokens.colors.star }} />
+</ColorPalette>
+
+## Typography
+
+Headings use **Outfit**, body copy uses **Nunito Sans**. Use the text shortcuts rather than raw sizes.
+
+<table>
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Font</th>
+      <th>Size / line height</th>
+      <th>Used for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>text-display</code>
+      </td>
+      <td>Outfit Bold</td>
+      <td>48.8px / 1.2</td>
+      <td>Hero title</td>
+    </tr>
+    <tr>
+      <td>
+        <code>text-h2</code>
+      </td>
+      <td>Outfit Bold</td>
+      <td>44px / 1.2</td>
+      <td>Section titles</td>
+    </tr>
+    <tr>
+      <td>
+        <code>text-h3</code>
+      </td>
+      <td>Outfit SemiBold</td>
+      <td>24px / 1.26</td>
+      <td>Card and step titles</td>
+    </tr>
+    <tr>
+      <td>
+        <code>text-eyebrow</code>
+      </td>
+      <td>Outfit SemiBold</td>
+      <td>18px, 1.44px tracking, caps</td>
+      <td>Line above section titles</td>
+    </tr>
+    <tr>
+      <td>
+        <code>text-label</code>
+      </td>
+      <td>Outfit SemiBold</td>
+      <td>caps, size set per use</td>
+      <td>Buttons, links, footer headers</td>
+    </tr>
+    <tr>
+      <td>
+        <code>text-lead</code>
+      </td>
+      <td>Nunito Sans</td>
+      <td>18px / 1.6</td>
+      <td>Intro paragraphs</td>
+    </tr>
+    <tr>
+      <td>
+        <code>text-body</code>
+      </td>
+      <td>Nunito Sans</td>
+      <td>16px / 1.5</td>
+      <td>Card copy</td>
+    </tr>
+  </tbody>
+</table>
+
+<Typeset
+  fontFamily={tokens.font.heading}
+  fontWeight={700}
+  sampleText="Turning your ideas into Web & Mobile Apps"
+  fontSizes={[48.8, 44, 24]}
+/>
+<Typeset
+  fontFamily={tokens.font.body}
+  sampleText="We plug in where you need us most."
+  fontSizes={[18, 16, 14]}
+/>
+
+## Radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Value</th>
+      <th>Used for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>chip</code>
+      </td>
+      <td>12px</td>
+      <td>Inputs, contact icon chips</td>
+    </tr>
+    <tr>
+      <td>
+        <code>tile</code>
+      </td>
+      <td>16px</td>
+      <td>Service icon chips</td>
+    </tr>
+    <tr>
+      <td>
+        <code>card</code>
+      </td>
+      <td>20px</td>
+      <td>Cards, expertise bar</td>
+    </tr>
+    <tr>
+      <td>
+        <code>panel</code>
+      </td>
+      <td>24px</td>
+      <td>Form panel, project thumbnails</td>
+    </tr>
+    <tr>
+      <td>
+        <code>section</code>
+      </td>
+      <td>32px</td>
+      <td>Contact section</td>
+    </tr>
+    <tr>
+      <td>
+        <code>pill</code>
+      </td>
+      <td>40px</td>
+      <td>Buttons and tags</td>
+    </tr>
+  </tbody>
+</table>
+
+## Styling rules
+
+- Use UnoCSS utilities and the shortcuts in `uno.config.ts` first.
+- Reach for plain CSS only when utilities can't express it (gradients, masks, keyframes), and put it in the
+  component's `<style scoped>` block.
+- Global CSS is limited to fonts and the page base in `src/style.css`.
