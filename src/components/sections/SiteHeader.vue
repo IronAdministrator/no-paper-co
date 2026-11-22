@@ -60,6 +60,13 @@ onBeforeUnmount(() => window.removeEventListener("scroll", onScroll));
 </template>
 
 <style scoped>
+/* Its own compositor layer, so scrolling moves the bar as one piece instead of repainting it (and
+   its backdrop blur) every frame, which showed as a slight jitter. */
+.bar {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 .bar::before {
   content: "";
   position: absolute;
@@ -70,6 +77,7 @@ onBeforeUnmount(() => window.removeEventListener("scroll", onScroll));
   backdrop-filter: blur(14px);
   opacity: 0;
   transition: opacity 0.3s ease;
+  will-change: opacity;
 }
 
 .bar.scrolled::before {

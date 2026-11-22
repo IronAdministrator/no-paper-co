@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vParallax } from "../../composables/useParallax";
 import laptopArt from "../../assets/object-other-03.png";
 import { stats } from "../../data/content";
 import ButtonPill from "../ui/ButtonPill.vue";
@@ -12,6 +13,7 @@ import StatItem from "../ui/StatItem.vue";
     class="container-page mt-[119px] flex scroll-mt-10 items-center gap-16 lt-md:(mt-20 flex-col gap-10)"
   >
     <img
+      v-parallax="0.08"
       :src="laptopArt"
       alt="Illustration of a laptop with a chart bubble"
       width="460"
