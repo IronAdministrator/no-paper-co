@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vParallax } from "../../composables/useParallax";
 import { reactive, ref } from "vue";
 import iconEnvelope from "../../assets/icon-envelope.svg";
 import iconGeo from "../../assets/icon-geo-alt.svg";
@@ -53,6 +54,7 @@ function submit() {
         </li>
       </ul>
       <img
+        v-parallax="0.1"
         :src="sideArt"
         alt=""
         width="260"
