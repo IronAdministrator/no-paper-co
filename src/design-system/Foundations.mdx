@@ -1,5 +1,5 @@
 import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs/blocks";
-import { tokens } from "./tokens";
+import { lightColors, tokens } from "./tokens";
 
 <Meta title="Design system/Foundations" />
 
@@ -13,6 +13,11 @@ updates the site and this documentation together.
 
 <ColorPalette>
   <ColorItem title="ink" subtitle="Page background" colors={{ ink: tokens.colors.ink }} />
+  <ColorItem
+    title="fg"
+    subtitle="Text, in opacity steps (fg/90 … fg/60)"
+    colors={{ fg: tokens.colors.fg }}
+  />
   <ColorItem title="surface" subtitle="Bars, panels and cards" colors={tokens.colors.surface} />
   <ColorItem
     title="primary"
@@ -26,6 +31,26 @@ updates the site and this documentation together.
   />
   <ColorItem title="accent" subtitle="Links and contact chips" colors={tokens.colors.accent} />
   <ColorItem title="star" subtitle="Ratings" colors={{ star: tokens.colors.star }} />
+</ColorPalette>
+
+## Light theme
+
+The site has a dark theme (default) and a light theme. Both use the same token names, so components never change:
+`uno.config.ts` writes the light values as CSS variable overrides under `:root[data-theme="light"]`. Use the **Theme**
+switch in the toolbar to see any story in either theme. Every text pair in the light theme meets WCAG AA:
+`fg/60` is 4.7:1 on `surface`, `primary` 5.2:1, `accent` 4.9:1, and white `on-primary` labels 6.3:1.
+
+<ColorPalette>
+  <ColorItem title="ink" subtitle="Page background" colors={{ ink: lightColors.ink }} />
+  <ColorItem title="fg" subtitle="Text, in opacity steps" colors={{ fg: lightColors.fg }} />
+  <ColorItem title="surface" subtitle="Bars, panels and cards" colors={lightColors.surface} />
+  <ColorItem title="primary" subtitle="Buttons, eyebrows, borders" colors={lightColors.primary} />
+  <ColorItem
+    title="on-primary"
+    subtitle="Labels on a primary fill"
+    colors={{ "on-primary": lightColors["on-primary"] }}
+  />
+  <ColorItem title="accent" subtitle="Links and contact chips" colors={lightColors.accent} />
 </ColorPalette>
 
 ## Typography

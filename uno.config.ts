@@ -1,9 +1,37 @@
 import { defineConfig, presetWind4, transformerDirectives, transformerVariantGroup } from "unocss";
-import { tokens } from "./src/design-system/tokens.ts";
+import { lightColors, tokens } from "./src/design-system/tokens.ts";
+
+type ColorTree = { readonly [key: string]: string | ColorTree };
+
+/** Flattens a colour tree into the --colors-* variables that presetWind4 reads (primary.DEFAULT → --colors-primary-DEFAULT). */
+function colorVars(tree: ColorTree, prefix = "--colors"): string {
+  return Object.entries(tree)
+    .map(([key, value]) =>
+      typeof value === "string"
+        ? `${prefix}-${key}:${value};`
+        : colorVars(value, `${prefix}-${key}`),
+    )
+    .join("");
+}
 
 export default defineConfig({
   presets: [presetWind4({ preflights: { reset: true } })],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+  // Both themes as CSS variables, so every colour utility follows data-theme on <html>.
+  preflights: [
+    {
+      getCSS: () =>
+        `:root{color-scheme:dark;${colorVars(tokens.colors)}}` +
+        `:root[data-theme="light"]{color-scheme:light;${colorVars(lightColors)}}`,
+    },
+  ],
+  // light:… applies a utility only in the light theme (for the few things that differ beyond colour).
+  variants: [
+    (matcher) =>
+      matcher.startsWith("light:")
+        ? { matcher: matcher.slice(6), selector: (s) => `:root[data-theme="light"] ${s}` }
+        : matcher,
+  ],
   theme: {
     colors: tokens.colors,
     font: tokens.font,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import arrowUpRight from "../../assets/icon-arrow-up-right.svg";
+import ThemeIcon from "./ThemeIcon.vue";
 
 withDefaults(defineProps<{ thumbnail: string; title: string; tags: string[]; href?: string }>(), {
   href: "#contact",
@@ -26,7 +27,7 @@ withDefaults(defineProps<{ thumbnail: string; title: string; tags: string[]; hre
           <li
             v-for="tag in tags"
             :key="tag"
-            class="rounded-pill border border-solid border-white/20 px-[14px] py-[6px] font-body font-semibold text-[14px] leading-body text-white/80"
+            class="rounded-pill border border-solid border-fg/20 px-[14px] py-[6px] font-body font-semibold text-[14px] leading-body text-fg/80"
           >
             {{ tag }}
           </li>
@@ -37,7 +38,7 @@ withDefaults(defineProps<{ thumbnail: string; title: string; tags: string[]; hre
         :aria-label="`Open ${title}`"
         class="grid size-[52px] shrink-0 place-items-center rounded-full border border-solid border-primary transition-colors hover:bg-primary/20"
       >
-        <img :src="arrowUpRight" alt="" width="24" height="24" class="size-5" />
+        <ThemeIcon :src="arrowUpRight" :size="20" class="text-fg" />
       </a>
     </div>
   </article>

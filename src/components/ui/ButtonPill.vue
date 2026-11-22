@@ -20,7 +20,7 @@ const classes = computed(() => [
   "transition-colors duration-200 focus-visible:(outline-2 outline-solid outline-accent outline-offset-3)",
   props.variant === "filled"
     ? "bg-primary text-on-primary hover:(bg-primary-hover border-primary-hover)"
-    : "bg-transparent text-white hover:bg-primary-soft",
+    : "bg-transparent text-fg hover:bg-primary-soft",
   props.block ? "w-full" : "",
 ]);
 </script>

@@ -12,7 +12,7 @@ import ServiceCard from "../ui/ServiceCard.vue";
         eyebrow="What we do"
         title="Services built around your goals"
       />
-      <p class="w-[400px] max-w-full text-lead text-white/70">
+      <p class="w-[400px] max-w-full text-lead text-fg/70">
         Whether you need a single landing page or a full product team, we plug in where you need us
         most.
       </p>

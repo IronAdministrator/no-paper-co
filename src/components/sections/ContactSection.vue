@@ -36,7 +36,7 @@ function submit() {
   >
     <div class="flex min-w-0 flex-1 flex-col items-start gap-6">
       <SectionHeading eyebrow="Let's talk" title="Have an idea? Let's build it together." />
-      <p class="text-lead text-white/75">
+      <p class="text-lead text-fg/75">
         Tell us a bit about your project and we'll get back to you within one business day with next
         steps and a rough estimate.
       </p>
@@ -46,7 +46,7 @@ function submit() {
           <component
             :is="line.href ? 'a' : 'span'"
             :href="line.href"
-            class="font-body font-semibold text-[17px] leading-body text-white/90"
+            class="font-body font-semibold text-[17px] leading-body text-fg/90"
             :class="{ 'hover:text-accent transition-colors': line.href }"
             >{{ line.label }}</component
           >
@@ -62,7 +62,7 @@ function submit() {
     </div>
 
     <form
-      class="flex w-[440px] shrink-0 flex-col gap-[18px] rounded-panel border border-solid border-white/10 bg-ink/60 p-9 lt-lg:w-full lt-sm:p-6"
+      class="flex w-[440px] shrink-0 flex-col gap-[18px] rounded-panel border border-solid border-fg/10 bg-ink/60 p-9 lt-lg:w-full lt-sm:p-6"
       @submit.prevent="submit"
     >
       <TextField
@@ -103,6 +103,10 @@ function submit() {
 
 <style scoped>
 .panel {
-  background-image: linear-gradient(133.87deg, #312a64 0%, #141240 71.429%);
+  background-image: linear-gradient(
+    133.87deg,
+    var(--colors-surface-DEFAULT) 0%,
+    var(--colors-surface-deep) 71.429%
+  );
 }
 </style>

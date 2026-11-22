@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ThemeIcon from "./ThemeIcon.vue";
+
 withDefaults(
   defineProps<{
     icon: string;
@@ -10,9 +12,9 @@ withDefaults(
 );
 
 const tones = {
-  lilac: { box: "size-14 rounded-tile bg-primary-soft", icon: 26 },
-  accent: { box: "size-10 rounded-chip bg-accent-soft", icon: 18 },
-  outline: { box: "size-10 rounded-full border border-solid border-white/20", icon: 18 },
+  lilac: { box: "size-14 rounded-tile bg-primary-soft text-primary", icon: 26 },
+  accent: { box: "size-10 rounded-chip bg-accent-soft text-accent", icon: 18 },
+  outline: { box: "size-10 rounded-full border border-solid border-fg/20 text-fg/85", icon: 18 },
 } as const;
 </script>
 
@@ -23,6 +25,6 @@ const tones = {
     :role="label ? 'img' : undefined"
     :aria-label="label"
   >
-    <img :src="icon" alt="" :width="tones[tone].icon" :height="tones[tone].icon" />
+    <ThemeIcon :src="icon" :size="tones[tone].icon" />
   </span>
 </template>

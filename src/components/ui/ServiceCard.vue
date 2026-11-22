@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import arrowRight from "../../assets/icon-arrow-right.svg";
 import IconChip from "./IconChip.vue";
+import ThemeIcon from "./ThemeIcon.vue";
 
 withDefaults(defineProps<{ icon: string; title: string; description: string; href?: string }>(), {
   href: "#contact",
@@ -13,17 +14,15 @@ withDefaults(defineProps<{ icon: string; title: string; description: string; hre
   >
     <IconChip :icon="icon" tone="lilac" />
     <h3 class="text-h3">{{ title }}</h3>
-    <p class="text-body text-white/70">{{ description }}</p>
+    <p class="text-body text-fg/70">{{ description }}</p>
     <a
       :href="href"
       class="inline-flex items-center gap-2 text-label text-[14px] tracking-[1.12px] text-accent"
     >
       Learn more
-      <img
+      <ThemeIcon
         :src="arrowRight"
-        alt=""
-        width="16"
-        height="16"
+        :size="16"
         class="transition-transform duration-200 group-hover:translate-x-[3px]"
       />
     </a>
