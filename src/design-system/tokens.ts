@@ -16,7 +16,14 @@ export const tokens = {
       hover: "#a0a0e6",
       soft: "rgba(141, 141, 218, 0.18)", // icon chip
       line: "rgba(141, 141, 218, 0.25)", // card borders
+      text: "#9a9ae0", // small lilac text on solid surface (4.9:1); primary there is only 4.23:1
     },
+    /**
+     * Text and icons on a primary fill (filled buttons). Ink on lilac is 6.8:1 (8.5:1 on hover);
+     * white on lilac is only 3.0:1, so never put white text on primary.
+     * Small primary text on surface is 4.23:1: keep lilac text on surface to 24px and up.
+     */
+    "on-primary": "#000022",
     accent: {
       DEFAULT: "#85cecf", // links, contact chips
       soft: "rgba(133, 206, 207, 0.15)",

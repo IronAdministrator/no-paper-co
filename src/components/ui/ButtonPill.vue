@@ -16,11 +16,11 @@ const props = withDefaults(
 
 const classes = computed(() => [
   "inline-flex items-center justify-center px-9 py-[9px] border-2 border-solid border-primary rounded-pill",
-  "text-label text-[18px] tracking-[1.08px] text-white whitespace-nowrap cursor-pointer",
+  "text-label text-[18px] tracking-[1.08px] whitespace-nowrap cursor-pointer",
   "transition-colors duration-200 focus-visible:(outline-2 outline-solid outline-accent outline-offset-3)",
   props.variant === "filled"
-    ? "bg-primary hover:(bg-primary-hover border-primary-hover)"
-    : "bg-transparent hover:bg-primary-soft",
+    ? "bg-primary text-on-primary hover:(bg-primary-hover border-primary-hover)"
+    : "bg-transparent text-white hover:bg-primary-soft",
   props.block ? "w-full" : "",
 ]);
 </script>

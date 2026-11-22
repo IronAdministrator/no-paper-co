@@ -14,7 +14,16 @@ updates the site and this documentation together.
 <ColorPalette>
   <ColorItem title="ink" subtitle="Page background" colors={{ ink: tokens.colors.ink }} />
   <ColorItem title="surface" subtitle="Bars, panels and cards" colors={tokens.colors.surface} />
-  <ColorItem title="primary" subtitle="Buttons, eyebrows, borders" colors={tokens.colors.primary} />
+  <ColorItem
+    title="primary"
+    subtitle="Buttons, eyebrows, borders. Small lilac text only on ink (6.8:1), not on surface (4.23:1)"
+    colors={tokens.colors.primary}
+  />
+  <ColorItem
+    title="on-primary"
+    subtitle="Text on a primary fill, such as filled button labels (6.8:1)"
+    colors={{ "on-primary": tokens.colors["on-primary"] }}
+  />
   <ColorItem title="accent" subtitle="Links and contact chips" colors={tokens.colors.accent} />
   <ColorItem title="star" subtitle="Ratings" colors={{ star: tokens.colors.star }} />
 </ColorPalette>
