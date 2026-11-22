@@ -27,7 +27,7 @@ Landing page for the NO_PAPER studio. Vue 3 + TypeScript, UnoCSS, Storybook, bui
 - **Components:** reusable pieces go in `src/components/ui/`, each with a `*.stories.ts` Storybook story. Page sections
   go in `src/components/sections/` and are built from ui components. Copy goes in `src/data/content.ts`.
 - When a ui component's look or API changes, update its story and the matching component in the design system.
-- Follow the design rules: dark only, lilac `primary` + teal `accent`, Outfit for headings and Nunito Sans for body,
+- Follow the design rules: dark by default with a light theme, lilac `primary` + teal `accent`, Outfit for headings and Nunito Sans for body,
   pill buttons, translucent outlined cards with no shadows, 44px touch targets, 4.5:1 text contrast.
 - Write the name as `NO_PAPER`. Use [PLACEHOLDER] instead of invented facts or numbers.
 
