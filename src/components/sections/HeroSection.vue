@@ -2,17 +2,18 @@
 import arrowDown from "../../assets/arrow-down.svg";
 import heroArt from "../../assets/object-other-07.webp";
 import ButtonPill from "../ui/ButtonPill.vue";
+import ThemeIcon from "../ui/ThemeIcon.vue";
 </script>
 
 <template>
   <section
-    class="container-page relative mt-[33px] grid grid-cols-[517px_1fr] items-start gap-5 lt-lg:grid-cols-1"
+    class="container-page relative mt-[17px] grid grid-cols-[517px_1fr] items-start gap-5 lt-lg:grid-cols-1"
   >
     <div class="pt-[165px] lt-lg:(order-2 pt-0)">
-      <h1 class="text-display text-white">
+      <h1 class="text-display text-fg">
         Turning your ideas into <br class="lt-sm:hidden" />Web &amp; Mobile Apps
       </h1>
-      <p class="mt-[5px] max-w-[505px] font-body text-[18px] leading-body text-white">
+      <p class="mt-[5px] max-w-[505px] font-body text-[18px] leading-body text-fg">
         Whether you are looking to build a simple website, a complex web application, or a
         cutting-edge mobile app, our team has the expertise and experience to make it happen.
       </p>
@@ -35,7 +36,7 @@ import ButtonPill from "../ui/ButtonPill.vue";
       class="absolute bottom-[-32px] left-1/2 -translate-x-1/2 lt-lg:hidden"
       aria-label="Scroll to our expertise"
     >
-      <img :src="arrowDown" alt="" width="42" height="42" class="bounce" />
+      <ThemeIcon :src="arrowDown" :size="42" class="bounce text-primary" />
     </a>
   </section>
 </template>

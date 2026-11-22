@@ -7,12 +7,12 @@ defineProps<{ number: string; title: string; description: string }>();
     <p class="font-heading font-bold text-[56px] leading-[1.1] text-primary">{{ number }}</p>
     <div class="line h-[2px] w-full" aria-hidden="true" />
     <h3 class="text-h3">{{ title }}</h3>
-    <p class="text-body text-white/70">{{ description }}</p>
+    <p class="text-body text-fg/70">{{ description }}</p>
   </li>
 </template>
 
 <style scoped>
 .line {
-  background: linear-gradient(to right, #8d8dda, rgba(141, 141, 218, 0));
+  background: linear-gradient(to right, var(--colors-primary-DEFAULT), transparent);
 }
 </style>

@@ -5,7 +5,7 @@ import { expertise } from "../../data/content";
 <template>
   <section id="expertise" class="container-page mt-[49px] scroll-mt-10 lt-lg:mt-16">
     <h2
-      class="pl-1 font-heading font-semibold text-[24px] leading-[1.2] uppercase text-white lt-sm:text-[18px]"
+      class="pl-1 font-heading font-semibold text-[24px] leading-[1.2] uppercase text-fg lt-sm:text-[18px]"
     >
       Our expertise in
     </h2>
@@ -15,7 +15,7 @@ import { expertise } from "../../data/content";
       <li
         v-for="item in expertise"
         :key="item"
-        class="font-heading text-[30px] leading-[1.2] whitespace-nowrap text-white/60 lt-md:text-[22px]"
+        class="font-heading text-[30px] leading-[1.2] whitespace-nowrap text-fg/60 lt-md:text-[22px]"
       >
         {{ item }}
       </li>

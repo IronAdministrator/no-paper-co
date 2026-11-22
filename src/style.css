@@ -6,7 +6,6 @@
 
 /* Global base only. Component styles live in the components (UnoCSS utilities + scoped CSS). */
 :root {
-  color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,7 +16,14 @@ html {
 
 body {
   min-width: 320px;
-  background: #000022;
-  color: #ffffff;
+  background: var(--colors-ink);
+  color: var(--colors-fg);
   font-family: "Nunito Sans", system-ui, sans-serif;
+}
+
+/* Theme switch: the new theme is revealed in a growing circle from the toggle (see useTheme.ts). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

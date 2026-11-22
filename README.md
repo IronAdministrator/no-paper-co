@@ -26,7 +26,8 @@ is kept for reference only.
 
 ```bash
 pnpm install
-pnpm dev               # start the site at http://localhost:5173
+pnpm dev               # site at http://localhost:5173 + Storybook at http://localhost:6006
+pnpm dev:app           # just the site
 pnpm build             # type-check and build to dist/
 pnpm preview           # serve the production build
 pnpm check             # format, lint (vp check) and type-check (vue-tsc)
@@ -53,6 +54,5 @@ uno.config.ts            # UnoCSS theme (from tokens.ts) and shortcuts such as t
 
 - The contact form has no backend yet. Submitting opens the visitor's mail app with the message pre-filled
   to `hello@nopaper.studio`.
-- The about-section laptop illustration was cropped from a Figma render because the Figma API limit was reached
-  before it could be exported on its own, so it sits on the page colour rather than a transparent background.
-  Replace `src/assets/object-other-03.png` (and the image on the canvas) with a transparent version for a sharper result.
+- The about-section laptop illustration was cropped from a Figma render; its page-colour background was converted to
+  transparency so it works in both themes. A clean export from the source file would still be sharper.

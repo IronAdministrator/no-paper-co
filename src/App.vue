@@ -13,7 +13,7 @@ import TestimonialsSection from "./components/sections/TestimonialsSection.vue";
 </script>
 
 <template>
-  <div id="top" class="relative isolate overflow-x-clip bg-ink text-white">
+  <div id="top" class="relative isolate overflow-x-clip bg-ink text-fg">
     <BackgroundGlows />
     <SiteHeader />
     <main>

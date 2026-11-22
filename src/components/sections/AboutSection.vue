@@ -16,14 +16,14 @@ import StatItem from "../ui/StatItem.vue";
       alt="Illustration of a laptop with a chart bubble"
       width="460"
       height="460"
-      class="art size-[460px] shrink-0 lt-lg:size-[340px] lt-sm:size-[280px]"
+      class="size-[460px] shrink-0 lt-lg:size-[340px] lt-sm:size-[280px]"
     />
     <div class="flex min-w-0 flex-1 flex-col items-start gap-7">
       <SectionHeading
         eyebrow="About the studio"
         title="A small team obsessed with shipping great products"
       />
-      <p class="text-lead text-white/80">
+      <p class="text-lead text-fg/80">
         We're a design and development studio partnering with founders and growing teams. From the
         first sketch to launch day, we handle strategy, UX/UI design and engineering under one roof,
         so nothing gets lost in translation.
@@ -35,10 +35,3 @@ import StatItem from "../ui/StatItem.vue";
     </div>
   </section>
 </template>
-
-<style scoped>
-/* The illustration sits on the page colour; fade its edges so it blends into any background glow. */
-.art {
-  mask-image: radial-gradient(circle at 50% 50%, #000 62%, transparent 72%);
-}
-</style>

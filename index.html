@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Set the theme before first paint: saved choice, else the system setting.
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("np-theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
     <title>NO_PAPER · Web &amp; Mobile App Studio</title>
     <meta
       name="description"

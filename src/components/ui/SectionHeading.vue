@@ -13,6 +13,6 @@ withDefaults(
 <template>
   <div class="flex flex-col gap-3">
     <p class="text-eyebrow">{{ eyebrow }}</p>
-    <component :is="as" class="text-h2 text-white">{{ title }}</component>
+    <component :is="as" class="text-h2 text-fg">{{ title }}</component>
   </div>
 </template>
