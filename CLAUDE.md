@@ -36,6 +36,7 @@ Landing page for the NO_PAPER studio. Vue 3 + TypeScript, UnoCSS, Storybook, bui
 ```bash
 pnpm install
 pnpm dev               # app at http://localhost:5173 and Storybook at http://localhost:6006
+pnpm dev --host        # same, reachable from other devices on your network
 pnpm dev:app           # just the app
 pnpm check             # vp check (format + lint) and vue-tsc; run before every commit
 pnpm build             # type-check and production build
