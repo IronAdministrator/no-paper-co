@@ -27,6 +27,7 @@ is kept for reference only.
 ```bash
 pnpm install
 pnpm dev               # site at http://localhost:5173 + Storybook at http://localhost:6006
+pnpm dev --host        # same, reachable from other devices on your network
 pnpm dev:app           # just the site
 pnpm build             # type-check and build to dist/
 pnpm preview           # serve the production build
