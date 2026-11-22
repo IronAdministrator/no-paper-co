@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { vParallax } from "../../composables/useParallax";
+import { vTilt } from "../../composables/useTilt";
 import arrowDown from "../../assets/arrow-down.svg";
 import heroArt from "../../assets/object-other-07.webp";
 import ButtonPill from "../ui/ButtonPill.vue";
@@ -26,6 +27,7 @@ import ThemeIcon from "../ui/ThemeIcon.vue";
 
     <img
       v-parallax="0.06"
+      v-tilt
       :src="heroArt"
       alt="Illustration of a desktop app with floating interface cards"
       width="537"

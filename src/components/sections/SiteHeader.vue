@@ -6,6 +6,9 @@ import ThemeToggle from "../ui/ThemeToggle.vue";
 
 const open = ref(false);
 const scrolled = ref(false);
+const bar = ref<HTMLElement>();
+const barHeight = ref(0);
+let resize: ResizeObserver | undefined;
 const { theme, setTheme } = useTheme();
 
 function onScroll() {
@@ -15,14 +18,24 @@ function onScroll() {
 onMounted(() => {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+  // The spacer keeps the bar's room in the page flow. Measured before first paint, so nothing jumps.
+  const el = bar.value!;
+  barHeight.value = el.offsetHeight;
+  resize = new ResizeObserver(() => (barHeight.value = el.offsetHeight));
+  resize.observe(el);
 });
-onBeforeUnmount(() => window.removeEventListener("scroll", onScroll));
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+  resize?.disconnect();
+});
 </script>
 
 <template>
-  <!-- Sticky with a negative top: 24px of the top padding scrolls away, so the bar stays compact
-       without changing the page layout. The frosted background fades in once the page scrolls. -->
-  <header class="bar sticky top-[-24px] z-30 pb-4 pt-10" :class="{ scrolled }">
+  <!-- Fixed, not sticky: a fixed bar is moved by the compositor and stays rock steady while
+       scrolling (the sticky one jittered slightly). Once the page scrolls, the bar slides up 24px
+       to stay compact and its frosted background fades in. -->
+  <div aria-hidden="true" :style="{ height: `${barHeight}px` }" />
+  <header ref="bar" class="bar fixed inset-x-0 top-0 z-30 pb-4 pt-10" :class="{ scrolled }">
     <nav class="container-page relative flex items-center justify-between gap-6" aria-label="Main">
       <a href="#top" class="font-heading font-bold text-[20px] leading-heading text-fg">NO_PAPER</a>
 
@@ -60,11 +73,13 @@ onBeforeUnmount(() => window.removeEventListener("scroll", onScroll));
 </template>
 
 <style scoped>
-/* Its own compositor layer, so scrolling moves the bar as one piece instead of repainting it (and
-   its backdrop blur) every frame, which showed as a slight jitter. */
 .bar {
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.bar.scrolled {
+  transform: translateY(-24px);
 }
 
 .bar::before {
